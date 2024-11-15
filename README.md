@@ -11,10 +11,10 @@ Topics Covered:
 ---------------
 - **Probability**:
     - Basic Probability Theory
-    - Conditional Probability
-    - Common Probability Distributions (Normal, Binomial, Poisson)
-    - Random Variables and Expected Value
-    - Monte Carlo Simulations
+    - Modeling randomness and uncertainty in network behavior.
+    - Probabilistic Boolean Networks (PBNs) and their applications.
+    - Monte Carlo simulations for Boolean Network analysis.
+    - Probabilistic inference in Boolean Networks
 
 - **Statistics**:
     - Descriptive Statistics (Mean, Median, Mode, Variance)
@@ -34,4 +34,4 @@ Getting Started:
 ----------------
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/Probability-and-Statistics-Analysis.git
+   git clone https://github.com/Amirhatamian/Probability-and-Statistics-Analysis.git
