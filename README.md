@@ -1,37 +1,39 @@
-Probability and Statistics Analysis
-===========================================
+# Probability and Statistics for Data Science
 
-Description:
--------------
-This repository provides a comprehensive collection of resources for **Probability** and **Statistics**. The content includes fundamental concepts, theory, and practical applications using Python. The focus is on helping learners build a strong understanding of both fields, with examples, visualizations, and code to demonstrate each concept.
+Coursework from my Probability and Statistics courses: one simulation project on random networks, and lab notebooks on time series and data handling in Python.
 
-**Probability** and **Statistics** are fundamental areas in data science, and this repository covers key topics such as probability distributions, hypothesis testing, regression analysis, and more.
+## Project: percolation on Boolean networks — `PERCOLATION_ON_BOOLEAN_NETWORKS.ipynb`
 
-Topics Covered:
----------------
-- **Probability**:
-    - Basic Probability Theory
-    - Modeling randomness and uncertainty in network behavior.
-    - Probabilistic Boolean Networks (PBNs) and their applications.
-    - Monte Carlo simulations for Boolean Network analysis.
-    - Probabilistic inference in Boolean Networks
+**Question:** in a random network, how does the size of the largest connected cluster change as the network gets denser?
 
-- **Statistics**:
-    - Descriptive Statistics (Mean, Median, Mode, Variance)
-    - Inferential Statistics (Confidence Intervals, Hypothesis Testing)
-    - Statistical Tests (t-test, ANOVA, Chi-Square)
-    - Correlation and Regression Analysis
-    - Data Visualizations (Histograms, Box Plots, Scatter Plots)
+**Method**
+- Scattered points at random (a Poisson process with density λ) on a large square, and drew a disc of radius 1 around each point. Two points are connected when their discs overlap.
+- Built the network with a KD-tree (SciPy) and NetworkX, and found the largest cluster with depth-first search.
+- Ran 30 simulations on a 100 × 100 square for each of 25 values of λ between 0.1 and 1, and averaged the size of the largest cluster.
+- The assignment text (Probability for Data Science, MSc in Data Science) is in `Project_P_DS_Boolean_RG.pdf`.
 
-Learning Objectives:
---------------------
-- Understand key concepts in Probability and Statistics.
-- Implement Probability and Statistical models in Python.
-- Use real-world datasets to apply these concepts.
-- Build an intuition for applying statistical tests and techniques in various domains.
+**Result:** below the critical density λc ≈ 4.512 / 4π the network breaks into many small, separate clusters. Above it, one large cluster suddenly appears and connects most of the points. The simulations show this sharp change (the percolation threshold) clearly.
 
-Getting Started:
-----------------
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/Amirhatamian/Probability-and-Statistics-Analysis.git
+## Lab notebooks
+
+| Notebook | Topics |
+|---|---|
+| `Statistical_Models_For_Data_Science_ToDo.ipynb` | NumPy and pandas refresher: arrays, reshaping, structured data, DataFrames, merging |
+| `Lesson2_21_11_2023_ToDo.ipynb` | Dates and times in pandas, reading tabular data, selection, sorting, pivot tables, resampling; exercises on temperature, earthquake and global temperature data |
+| `Lesson3_27_11_2023_ToDo.ipynb` | Time series charts: heatmaps, box and violin plots, lag plots, autocorrelation, white noise; exercises on CO₂, brain activity, Google stock prices and energy use |
+
+My weekly order forecasting project (ARIMA) is in my [Business Intelligence repository](https://github.com/Amirhatamian/Bussines-Intelligence-Project). The data files for the labs are in `csv-part2.zip` and `csv-part3.zip`.
+
+## How to run
+
+```bash
+git clone https://github.com/Amirhatamian/Probability-and-Statistics-Analysis.git
+cd Probability-and-Statistics-Analysis
+unzip csv-part2.zip && unzip csv-part3.zip
+pip install numpy pandas matplotlib seaborn scipy networkx statsmodels jupyter
+jupyter notebook
+```
+
+## Tools
+
+Python, NumPy, pandas, SciPy, NetworkX, Matplotlib, Seaborn
